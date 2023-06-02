@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosUrl = axios.create({
-  baseURL: "http://localhost:8000/api/admin",
+  baseURL: "https://dashbortbackend.onrender.com/api/admin",
   timeout: 5000,
 });
 
