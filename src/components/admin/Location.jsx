@@ -9,7 +9,7 @@ export const Location = () => {
       </div>
 
       <div>
-        <img src={myImage} alt="" className="w-full h-[305px]  " />
+        <img src={myImage} alt="" className="w-full h-[195px]  " />
       </div>
     </div>
   );

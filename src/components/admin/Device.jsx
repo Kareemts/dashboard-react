@@ -1,9 +1,10 @@
 import React from "react";
+import next from "../../public/next.png";
 
 export const Device = () => {
   return (
     <div className="">
-      <div className="text-[#000000] text-[16px] font-normal mt-8 ml-8 ">
+      <div className="text-[#000000] text-[16px] font-normal mt-5 ml-5 ">
         Devise Status
       </div>
 
@@ -24,7 +25,7 @@ export const Device = () => {
                   Online
                 </div>
               </td>
-              <td>Wed Apr 26 2023 ; 12:00:10</td>
+              <td>Wed Apr 26 2023 ; 12:00:10 --</td>
             </tr>
             <tr>
               <td>Test device 2</td>
@@ -33,12 +34,11 @@ export const Device = () => {
                   Online
                 </div>
               </td>
-              <td>Wed Apr 26 2023 ; 12:00:10</td>
-              <td>
-                <div className="bg-[#a5a4a4] text-white p-[5px] rounded-[200px] text-[10px]  ">
-                  {" "}
-                  >{" "}
-                </div>
+              <td className="relative">
+                Wed Apr 26 2023 ; 12:00:10{" "}
+                <span className="absolute right-0">
+                  <img src={next} alt="" />
+                </span>{" "}
               </td>
             </tr>
             <tr>
@@ -58,16 +58,15 @@ export const Device = () => {
                   Online
                 </div>
               </td>
-              <td>Wed Apr 26 2023 ; 12:00:10</td>
-              <td>
-                <div className="bg-[#a5a4a4] text-white p-[5px] rounded-[200px] text-[10px]  ">
-                  {" "}
-                  >{" "}
-                </div>
+              <td className="relative">
+                Wed Apr 26 2023 ; 12:00:10{" "}
+                <span className="absolute right-0">
+                  <img src={next} alt="" />
+                </span>{" "}
               </td>
             </tr>
             <tr>
-              <td>Test device 3</td>
+              <td>Test device 4</td>
               <td>
                 <div className="bg-[#E40404] text-white p-[2px] rounded-[3px] text-[10px]  ">
                   Online
@@ -82,12 +81,11 @@ export const Device = () => {
                   Online
                 </div>
               </td>
-              <td>Wed Apr 26 2023 ; 12:00:10</td>
-              <td>
-                <div className="bg-[#a5a4a4] text-white p-[5px] rounded-[200px] text-[10px]  ">
-                  {" "}
-                  >{" "}
-                </div>
+              <td className="relative">
+                Wed Apr 26 2023 ; 12:00:10{" "}
+                <span className="absolute right-0">
+                  <img src={next} alt="" />
+                </span>{" "}
               </td>
             </tr>
           </tbody>

@@ -4,6 +4,7 @@ import { Login } from "./pages/admin/Login";
 import PrivetRouter from "./PrivetRouter";
 import { AdminPanel } from "./pages/admin/Home";
 import Authorisation from "./Authorisation";
+import { Signup } from "./pages/admin/SignUp";
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
         <Routes>
           <Route element={<Authorisation />}>
             <Route path="/" element={<Login />} />
+          </Route>
+
+          <Route element={<Authorisation />}>
+            <Route path="/sign_up" element={<Signup />} />
           </Route>
 
           <Route element={<PrivetRouter />}>

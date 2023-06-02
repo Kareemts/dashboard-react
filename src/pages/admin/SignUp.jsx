@@ -3,31 +3,25 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { axiosUrl } from "../../services/axiosInstance";
-import logo from "../../public/logo.png";
-
-export const Login = () => {
+export const Signup = () => {
   const navigate = useNavigate();
   const onFinish = async (values) => {
-    let { data } = await axiosUrl.post("/adminLogin", {
+    let { data } = await axiosUrl.post("/signUp", {
       values,
     });
-
     console.log(data);
     if (data.adminInfo.message) {
-      message.error(data.adminInfo.message);
+      message.error(data.adminInfo.message ?? data.message);
     }
-    if (data.adminInfo.admin) {
-      localStorage.setItem("login", JSON.stringify({ login: true }));
-      navigate("/dashboard");
+    if (data.adminInfo.signUp) {
+      navigate("/");
     }
   };
   return (
     <div className="flex w-full h-screen">
-      <div className="  min-w-[500px] h-full bg-black">
+      <div className=" min-w-[500px] h-full bg-black">
         <div className="mt-32 m-20">
-          <h1 className="text-white text-xl font-bold mb-5 ">
-            <img src={logo} alt="" />
-          </h1>
+          <h1 className="text-white text-xl font-bold mb-5 ">Sign up</h1>
           <Form
             name="normal_login"
             className="login-form"
@@ -36,6 +30,20 @@ export const Login = () => {
             }}
             onFinish={onFinish}
           >
+            <Form.Item
+              name="name"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your full name!",
+                },
+              ]}
+            >
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="Full Name"
+              />
+            </Form.Item>
             <Form.Item
               name="userName"
               rules={[
@@ -47,7 +55,7 @@ export const Login = () => {
             >
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
-                placeholder="Username"
+                placeholder="UserName"
               />
             </Form.Item>
             <Form.Item
@@ -66,16 +74,16 @@ export const Login = () => {
               />
             </Form.Item>
             <Form.Item>
-              <Button htmlType="submit" className="bg-[#0B3366] text-white">
-                Log in
+              <Button htmlType="submit" className="bg-purple-500 text-white">
+                Sign Up
               </Button>
             </Form.Item>
             <div className="text-white">Or </div>
             <div
               className="text-blue-500 cursor-pointer"
-              onClick={() => navigate("/sign_up")}
+              onClick={() => navigate("/")}
             >
-              register now
+              Login
             </div>
           </Form>
         </div>
